@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+game_a = Game.create(title: "The Last of Us", image:,overview: )
+game_b = Game.create()
+
+comment_a = Comment.create()
+comment_b = Comment.create()
