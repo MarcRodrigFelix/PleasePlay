@@ -1,0 +1,15 @@
+SINGLE PAGE APP (SPA)
+---------------------
+
+
+User can add a game they want you to play.
+User can add an image.
+User can add a description.
+User can add a review.
+User can add a star level rating. <!-- MAYBE!! -->
+
+A game has a title, img, desc, review, rating. (likes??)
+A game has many comments / likes.
+
+A Comment belongs to a game.
+A comment has a commentor name(annonymously if wanted)
