@@ -6,7 +6,8 @@ class Game {
   }
 
   renderGame(){
-    console.log(this.game)
+    // console.log(this.game)
+    this.renderGameDiv()
   }
 
   // renderGame = () => {
@@ -15,12 +16,21 @@ class Game {
   //   game.then(games => games.forEach(game => console.log(game + 'data') ))
   // }
 
-  // renderGameDiv = () => {
-  //   const gameDiv = document.createElement('div')
-  //   const gameTitle = document.createElement('h3')
-  //   const gameImage = document.createElement('img')
-  //   const gameReview = document.createElement('p')
-  // }
+  renderGameDiv(){
+    const div = document.getElementById('game-div')
+    const gameDiv = document.createElement('DIV')
+    div.appendChild(gameDiv)
+
+    const gameTitle = document.createElement('H3')
+    gameDiv.appendChild(gameTitle)
+
+    const gameImage = document.createElement('IMG')
+    gameDiv.appendChild(gameImage)
+
+    const gameReview = document.createElement('P')
+    gameDiv.appendChild(gameReview)
+
+  }
 
   // rednerGameData(){
   //   const { title, image, review } = this.game
