@@ -6,7 +6,7 @@ class GameApp {
 
   init(){
     GamesApi.fetchGames().then(games => {
-      games.forEach(game => new CreateGames(game))
+      games.forEach(game => new Game(game))
     })
   }
 }

@@ -5,4 +5,4 @@
 // const render = new CreateGames();
 // render.renderGame(gameApi.fetchGames())
 
-new Game()
+new GameApp()

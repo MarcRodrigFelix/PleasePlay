@@ -2,9 +2,10 @@ class Game {
 
   constructor(game){
     this.game = game
+    this.render = this.renderGame()
   }
 
-  cons(){
+  renderGame(){
     console.log(this.game)
   }
 
