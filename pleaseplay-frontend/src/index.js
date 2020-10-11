@@ -1,3 +1,8 @@
-const GameApi = new GamesApi("http://localhost:3000/games/1");
+// const gameApi = new GamesApi("http://localhost:3000/games/1"); //grab rails API
+// // const fetchGame = GameApi.fetchGames()
+// // const CreateGame = new CreateGame() //put fetched game into creategame render
 
-GameApi.fetchGames()
+// const render = new CreateGames();
+// render.renderGame(gameApi.fetchGames())
+
+new Game()

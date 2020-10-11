@@ -1,13 +1,8 @@
 class GamesApi {
-  constructor(api){
-    this.api = api
-  }
 
-  fetchGames = () => {
-    fetch(this.api)
+  static fetchGames(){
+    return fetch("http://localhost:3000/games/1")
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.log(error))
   }
 
 }
