@@ -6,28 +6,26 @@ class Game {
   }
 
   renderGame(){
-    // console.log(this.game)
+    console.log(this.game)
     this.renderGameDiv()
   }
-
-  // renderGame = () => {
-  //   const game = this.game
-  //   // const mainDiv = document.getElementById('game-div')
-  //   game.then(games => games.forEach(game => console.log(game + 'data') ))
-  // }
 
   renderGameDiv(){
     const div = document.getElementById('game-div')
     const gameDiv = document.createElement('DIV')
+    gameDiv.className = 'game'
     div.appendChild(gameDiv)
 
     const gameTitle = document.createElement('H3')
+    gameTitle.innerHTML = this.game.title
     gameDiv.appendChild(gameTitle)
 
     const gameImage = document.createElement('IMG')
+    gameImage.src = this.game.image
     gameDiv.appendChild(gameImage)
 
     const gameReview = document.createElement('P')
+    gameReview.innerHTML = this.game.review
     gameDiv.appendChild(gameReview)
 
   }
