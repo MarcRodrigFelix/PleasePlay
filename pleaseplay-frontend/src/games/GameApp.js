@@ -9,4 +9,6 @@ class GameApp {
       games.forEach(game => new Game(game))
     })
   }
+
+
 }

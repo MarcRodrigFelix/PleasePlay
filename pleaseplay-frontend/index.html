@@ -6,6 +6,7 @@
   <script src="./src/games/GamesApi.js"></script>
   <script src="./src/games/Game.js"></script>
   <script src="./src/games/GameApp.js"></script>
+  <script src="./src/games/GameForm.js"></script>
   <script src="./src/index.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>PLeasePLay</title>
@@ -18,6 +19,16 @@
   <p>You can browse through the added games of others, not just any games though. The games that they belive %100 in their heart you should play.</p>
   <p>A game that needs to be played, must be played.</p>
 
-  <div id='game-div'></div>
+  <form>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="image">Image:</label><br>
+    <input type="text" id="image" name="image"><br>
+    <label for="review">Review:</label><br>
+    <input type="text" id="review" name="review" size="50" mexlength="200">
+  </form>
+
+
+<div id='game-div'></div>
 </body>
 </html>
