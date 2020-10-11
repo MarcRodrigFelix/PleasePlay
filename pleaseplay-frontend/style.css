@@ -1,10 +1,7 @@
 .main-body {
-  width: auto;
-  height: auto;
+  width: 800px;
+  margin: 0 auto;
   background-color: #A1ACB4;
   color:  #3E5161;
-  max-width: 100%;
-  height: auto;
-  left: 0px;
-  right: 0px;
+  text-align: center;
 }
