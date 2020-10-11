@@ -3,6 +3,11 @@ class GamesApi {
     this.api = api
   }
 
-  fetchGames = () => fetch(this.api).then(response => response.json()).then(data => console.log(data)) 
+  fetchGames = () => {
+    fetch(this.api)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+  }
 
 }
