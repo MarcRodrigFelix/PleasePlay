@@ -7,23 +7,20 @@ class GameForm{
 
 
   addEventListeners(){
-    if (mainBtn){
       mainBtn.addEventListener("click", () => {
         this.createGameForm()
         this.toggleGameForm()
-        console.log("main btn")
       });
-    }
-    // newGameForm.addEventListener("submit", this.handleForm)
+    newGameForm.addEventListener("submit", this.handleForm)
   }
 
 
   handleForm = (e) => {
     e.preventDefaul()
     const formData = this.grabFormData(e.target)
-    console.log(GamesApi.fetchGames())
 
-    GamesApi.postGame(formData)
+    new Game(game)
+    console.log(formData)
     console.log("formdata")
   }
 
@@ -37,18 +34,17 @@ class GameForm{
   }
 
 
-  createGameForm = () => {
+  createGameForm(){
     newGameForm.innerHTML = `
     <form class='game-form'>
 
-    
-    <input type="text" id="title" name="title" /><br>
+    <input type="text" id="title" name="title" placeholder="Title" /><br>
     
     <input type="text" id="image" name="image"/><br>
    
     <input type="text" id="review" name="review" size="50" mexlength="200"/><br>
 
-    <input type="submit" value="Add New Game" class="submit"/>
+    <input type="submit" value="Submit" class="submit"/>
 
   </form>
   `
