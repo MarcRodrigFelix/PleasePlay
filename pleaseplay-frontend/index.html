@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./src/games/GamesApi.js"></script>
-  <script src="./src/games/Game.js"></script>
-  <script src="./src/games/GameApp.js"></script>
-  <script src="./src/games/GameForm.js"></script>
-  <script src="./src/index.js"></script>
+  <script type="text/javascript" src="src/games/GamesApi.js"></script>
+  <script type="text/javascript" src="src/games/Game.js"></script>
+  <script type="text/javascript" src="src/games/GameApp.js"></script>
+  <script type="text/javascript" src="src/games/GameForm.js"></script>
+  <script defer type="text/javascript" src="src/index.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>PLeasePLay</title>
 </head>
@@ -18,17 +18,11 @@
   <p>If you're looking for a great game to play you came to the right place!</p>
   <p>You can browse through the added games of others, not just any games though. The games that they belive %100 in their heart you should play.</p>
   <p>A game that needs to be played, must be played.</p>
-
-  <form>
-    <label for="title">Title:</label><br>
-    <input type="text" id="title" name="title"><br>
-    <label for="image">Image:</label><br>
-    <input type="text" id="image" name="image"><br>
-    <label for="review">Review:</label><br>
-    <input type="text" id="review" name="review" size="50" mexlength="200">
-  </form>
+  <button id="newgame-btn">Add new game</button>
+  <div class="newgame-form"></div>
 
 
-<div id='game-div'></div>
+<div id='games-div'></div>
+
 </body>
 </html>

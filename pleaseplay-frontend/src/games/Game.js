@@ -2,7 +2,7 @@ class Game {
 
   constructor(game){
     this.game = game
-    this.render = this.renderGame()
+    this.renderGame()
   }
 
   renderGame(){
@@ -12,7 +12,7 @@ class Game {
 
   renderGameDiv(){
     const { title, image, review } = this.game
-    const div = document.getElementById('game-div')
+    const div = document.getElementById('games-div')
 
     const gameDiv = document.createElement('DIV')
     gameDiv.dataset.id = this.game.id
@@ -26,11 +26,14 @@ class Game {
     gameImage.className = 'game-img'
     gameImage.src = image
     gameDiv.appendChild(gameImage)
-// create paragraph for game review
+// create paragraph for game
     const gameReview = document.createElement('P')
     gameReview.innerHTML = review
     gameDiv.appendChild(gameReview)
   }
 
+  static getGames(){
+    api.fetchGames().then(games => games.forEach(game => new Game(game)))
+  }
 
 }

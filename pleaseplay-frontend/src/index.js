@@ -1,7 +1,11 @@
-new GameApp()
+const api = new GamesApi('http://localhost:3000')
 
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("myBtn");
-const span = document.getElementById("close");
 
-const form = new GameForm
+const mainBtn = document.getElementById("newgame-btn")
+const newGameForm = document.getElementsByClassName("newgame-form")
+
+
+const newFormInstance = new GameForm
+
+
+Game.getGames()
