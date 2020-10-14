@@ -15,4 +15,9 @@ class GamesController < ApplicationController
     }, except: [ :created_at, :updated_at ]
   end
 
+  def create
+    comment = Comment.find_or_create_by(content: params[:content])
+    game = Game.create(title: params[:title], image: params[:image], review: params[:review])
+  end
+
 end
