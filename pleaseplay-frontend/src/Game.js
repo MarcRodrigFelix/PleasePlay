@@ -33,7 +33,8 @@ class Game {
   }
 
   static getGames(){
-    api.fetchGames().then(games => games.forEach(game => new Game(game)))
+// fetch API and put games through new Game class to display new game.
+    new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
   }
 
 }

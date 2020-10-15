@@ -5,3 +5,8 @@
   color:  #3E5161;
   text-align: center;
 }
+
+.game-img {
+    max-width: 400px;
+    max-height: 400px;
+}
