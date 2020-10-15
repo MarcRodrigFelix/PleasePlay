@@ -18,6 +18,13 @@ class GamesController < ApplicationController
   def create
     comment = Comment.find_or_create_by(content: params[:content])
     game = Game.create(title: params[:title], image: params[:image], review: params[:review])
+
+    if game.valid?
+      render json: game
+    else
+      render json: {errors: "Whoopsie Goldberg, looks like something went wrong."}, status: 400
+    end
+
   end
 
 end
