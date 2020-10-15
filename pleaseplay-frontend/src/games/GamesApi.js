@@ -7,7 +7,7 @@ class GamesApi {
   fetchGames = () => fetch(`${this.url}/games`).then(response => response.json())
 
 
-  postGame = (newGame) => {
+  static postGame(newGame){
     return fetch("http://localhost:3000/games", {
       method: "POST",
       header: {
@@ -16,6 +16,8 @@ class GamesApi {
       },
       body: JSON.stringify(newGame),
     })
-    .then(response => response.json())
+    .then(response => console.log(response.json()))
   }
+
+
 }

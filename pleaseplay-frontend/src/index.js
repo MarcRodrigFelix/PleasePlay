@@ -2,8 +2,9 @@ const api = new GamesApi('http://localhost:3000')
 
 
 const mainBtn = document.getElementById("newgame-btn")
-const newGameForm = document.getElementById("newgame-form")
+const newGameForm = document.querySelector("#newgame-form")
 
 
-const newFormInstance = new GameForm
+const newGameFormInstance = new GameForm
+
 Game.getGames()
