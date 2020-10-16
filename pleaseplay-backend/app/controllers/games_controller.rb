@@ -25,4 +25,9 @@ class GamesController < ApplicationController
     end
   end
 
+
+  def destroy
+    Game.find(params[:id]).destroy
+  end
+
 end
