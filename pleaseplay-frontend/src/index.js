@@ -2,7 +2,7 @@ const newForm = document.getElementById("form")
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function(){
   
   Game.getGames()
   

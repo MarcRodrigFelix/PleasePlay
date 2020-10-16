@@ -16,6 +16,7 @@ class Game {
     const gameDiv = document.createElement('DIV')
     gameDiv.dataset.id = this.game.id
     div.appendChild(gameDiv)
+    gameDiv.className = 'game-div'
 // create div for game
     const gameTitle = document.createElement('H3')
     gameTitle.innerHTML = `| ${title} |`
@@ -29,7 +30,12 @@ class Game {
     const gameReview = document.createElement('P')
     gameReview.innerHTML = review
     gameDiv.appendChild(gameReview)
+
+    const deleteBtn = document.createElement('BUTTON')
+    deleteBtn.innerHTML = 'Delete'
+    gameDiv.appendChild(deleteBtn)
   }
+
 
   static getGames(){
 // fetch API and put games through new Game class to display new game.
