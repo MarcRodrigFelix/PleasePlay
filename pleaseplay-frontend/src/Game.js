@@ -6,7 +6,7 @@ class Game {
   }
 
   renderGame(){
-    console.log(this.game)
+    // console.log(this.game)
     this.renderGameDiv()
   }
 
@@ -19,7 +19,7 @@ class Game {
     div.appendChild(gameDiv)
 // create div for game
     const gameTitle = document.createElement('H3')
-    gameTitle.innerHTML = title
+    gameTitle.innerHTML = `| ${title} |`
     gameDiv.appendChild(gameTitle)
 // create title for game 
     const gameImage = document.createElement('IMG')

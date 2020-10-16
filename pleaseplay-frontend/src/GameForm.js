@@ -36,6 +36,7 @@ class GameForm{
       e.target.reset()
       })
   }
+
   
 }
 

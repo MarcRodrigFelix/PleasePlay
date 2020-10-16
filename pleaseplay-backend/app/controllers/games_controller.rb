@@ -17,7 +17,7 @@ class GamesController < ApplicationController
 
   def create
     game = Game.new(title: params[:title], image: params[:image], review: params[:review])
-byebug
+    
     if game.save
       render json: game
     else
