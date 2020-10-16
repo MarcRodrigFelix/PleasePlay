@@ -2,14 +2,14 @@ class Game {
 
   constructor(game){
     this.game = game
+    this.render()
+  }
+
+  render(){
     this.renderGame()
   }
 
   renderGame(){
-    this.renderGameDiv()
-  }
-
-  renderGameDiv(){
     const { title, image, review } = this.game
     const div = document.getElementById('games-div')
 

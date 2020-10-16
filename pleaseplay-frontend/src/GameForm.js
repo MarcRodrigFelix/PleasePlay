@@ -2,8 +2,6 @@ class GameForm{
   constructor(){
   }
 
-
-
   static createGame = (form) => {
 
     form.addEventListener("submit", function(e){
@@ -17,7 +15,6 @@ class GameForm{
       console.log(newGame)
         GamesApi.postGame(newGame)
         .then(game => {
-          console.log(game)
           new Game (game)
         })
         .catch(error => {
