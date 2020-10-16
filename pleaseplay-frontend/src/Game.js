@@ -47,18 +47,12 @@ class Game {
 
 
   static deleteGames(game){
-
     game.addEventListener("click", function(e){
       const gameId = e.target.parentNode.dataset.id
-
       if (e.target.className === 'delete'){
-        console.log(e.target.parentNode)
         GamesApi.deleteGame(gameId)
         e.target.parentNode.remove()
-      } else {
-        console.log('didnt work')
-      }
-
+      } 
     })
   }
 
