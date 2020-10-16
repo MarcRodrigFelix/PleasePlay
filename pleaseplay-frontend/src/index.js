@@ -7,4 +7,5 @@ document.addEventListener('DOMContentLoaded', () => {
   Game.getGames()
   
   GameForm.createGame(newForm)
+
 })

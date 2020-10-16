@@ -1,17 +1,7 @@
 class GameForm{
   constructor(){
-    // this.setEvents()
   }
 
-  // init(){
-  //   this.setEvents()
-  // }
-
-  // setEvents(){
-  //   const newForm = document.getElementById("form")
-
-  //   newForm.addEventListener("submit", this.createGame)
-  // }
 
 
   static createGame = (form) => {

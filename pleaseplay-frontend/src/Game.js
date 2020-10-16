@@ -6,7 +6,6 @@ class Game {
   }
 
   renderGame(){
-    // console.log(this.game)
     this.renderGameDiv()
   }
 
