@@ -1,7 +1,6 @@
 class GamesApi {
 
-  constructor(url){
-    this.url = url
+  constructor(){
   }
 
   fetchGames = () => fetch("http://localhost:3000/games").then(response => response.json())
@@ -17,6 +16,7 @@ class GamesApi {
       body: JSON.stringify(newGame),
     })
     .then(response => response.json())
+    .then(data => console.log(data))
   }
 
 

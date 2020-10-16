@@ -1,11 +1,15 @@
 
-  const mainBtn = document.getElementById("newgame-btn")
-  // const newForm = document.getElementById("game-form")
+const mainBtn = document.getElementById("newgame-btn")
+// const newForm = document.getElementById("form")
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const newForm = document.getElementById("form")
+
+  
   Game.getGames()
-
-  document.addEventListener('DOMContentLoaded', () => {
-
-    new GameForm()
-  })
-
-
+  
+  GameForm.createGame(newForm)
+})

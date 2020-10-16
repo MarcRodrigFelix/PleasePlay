@@ -1,37 +1,41 @@
 class GameForm{
   constructor(){
-    this.init()
+    // this.setEvents()
   }
 
-  init(){
-    this.setEvents()
-  }
+  // init(){
+  //   this.setEvents()
+  // }
 
-  setEvents(){
-    const newForm = document.getElementById("game-form")
-    newForm.addEventListener("submit", this.createGame)
-  }
+  // setEvents(){
+  //   const newForm = document.getElementById("form")
+
+  //   newForm.addEventListener("submit", this.createGame)
+  // }
 
 
-  createGame = (form) => {
-    // form.addEventListener("submit", function(e){
-      form.preventDefault()
+  static createGame = (form) => {
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault()
 
       const newGame = {
         title: form.title.value,
         image: form.image.value,
         review: form.review.value
       };
+      console.log(newGame)
         GamesApi.postGame(newGame)
-        .then(createdNewGame => {
-          new Game (createdNewGame)
+        .then(game => {
+          console.log(game)
+          new Game (game)
         })
         .catch(error => {
-          console.log(this.game)
           console.log(error)
         })
-      form.target.reset()
-
-    }
+      e.target.reset()
+      })
+  }
+  
 }
 
