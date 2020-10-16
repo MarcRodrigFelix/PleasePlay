@@ -17,11 +17,15 @@ class GamesApi {
     })
     .then(response => response.json())
   }
-  
+
 
   static deleteGame(gameId){
-    return fetch(`http://localhost:3000/games/${gameId}`, { method: "DELETE" })
-    .then(response => response.json())
+    return fetch(`http://localhost:3000/games/${gameId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
   }
 
 

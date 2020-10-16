@@ -1,11 +1,10 @@
 const newForm = document.getElementById("form")
-
+const game = document.querySelector('#games-div')
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  
+  GameForm.createGame(newForm)
   Game.getGames()
   
-  GameForm.createGame(newForm)
-
+  Game.deleteGames(game)
 })

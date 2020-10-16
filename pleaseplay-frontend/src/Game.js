@@ -2,12 +2,12 @@ class Game {
 
   constructor(game){
     this.game = game
-    this.render()
+    this.card = this.renderGame()
   }
 
-  render(){
-    this.renderGame()
-  }
+  // render(){
+  //   this.renderGame()
+  // }
 
   renderGame(){
     const { title, image, review } = this.game
@@ -33,13 +33,32 @@ class Game {
 
     const deleteBtn = document.createElement('BUTTON')
     deleteBtn.innerHTML = 'Delete'
+    deleteBtn.className = 'delete'
     gameDiv.appendChild(deleteBtn)
+
+    return gameDiv
   }
 
 
   static getGames(){
 // fetch API and put games through new Game class to display new game.
     new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
+  }
+
+
+  static deleteGames(game){
+
+    game.addEventListener("click", function(e){
+      let gameId = e.target.parentNode.dataset.id
+
+      if (e.target.className === 'delete'){
+        GamesApi.deleteGame(gameId)
+        e.target.parentNode.remove()
+      } else {
+        console.log('didnt work')
+      }
+
+    })
   }
 
 }
