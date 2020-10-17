@@ -2,12 +2,14 @@ class Game {
 
   constructor(game){
     this.game = game
-    this.renderGame()
+    this.render()
+    // this.renderUpdateForm(this.game)
   }
 
-  // render(){
-  //   this.renderGame()
-  // }
+  render(){
+    this.renderGame()
+    console.log(this.game)
+  }
 
   renderGame(){
     const { title, image, review } = this.game
@@ -40,6 +42,29 @@ class Game {
     updateGame.innerHTML = 'Update'
     updateGame.className = 'update'
     gameDiv.appendChild(updateGame)
+
+    const updateForm = document.createElement('form')
+    updateForm.setAttribute('id', `game-id-${this.game.id}`)
+    updateForm.className = 'update-form'
+    gameDiv.appendChild(updateForm)
+
+    const upTitle = document.createElement('input')
+    upTitle.setAttribute('type', 'text');
+    upTitle.setAttribute('name', 'title');
+    upTitle.setAttribute('value', `${title}`);
+    updateForm.appendChild(upTitle)
+
+    const upImage = document.createElement('input')
+    upImage.setAttribute('type', 'text');
+    upImage.setAttribute('name', 'image');
+    upImage.setAttribute('placeholder', 'Paste new image url.');
+    updateForm.appendChild(upImage)
+
+    const upReview = document.createElement('input')
+    upReview.setAttribute('type', 'text');
+    upReview.setAttribute('name', 'title');
+    upReview.setAttribute('placeholder', `Begin typing a new review...`);
+    updateForm.appendChild(upReview)
   }
 
 
