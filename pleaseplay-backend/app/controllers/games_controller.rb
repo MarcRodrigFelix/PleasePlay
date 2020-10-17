@@ -1,9 +1,11 @@
 class GamesController < ApplicationController
 
+
   def index
     games = Game.all
     render json: games, except: [ :created_at, :updated_at ]
   end
+
 
   def show
     game = Game.find_by(id: params[:id])
@@ -15,6 +17,7 @@ class GamesController < ApplicationController
     }, except: [ :created_at, :updated_at ]
   end
 
+
   def create
     game = Game.new(title: params[:title], image: params[:image], review: params[:review])
     
@@ -23,6 +26,14 @@ class GamesController < ApplicationController
     else
       render json: game.errors
     end
+  end
+
+
+  def update
+    game = Game.find_by(id: params[:id])
+    game.update(title: params[:title], image: params[:image], review: params[:review])
+
+    render json: game
   end
 
 
