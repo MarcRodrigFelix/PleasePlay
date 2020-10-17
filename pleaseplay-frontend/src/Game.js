@@ -30,18 +30,16 @@ class Game {
     const gameReview = document.createElement('P')
     gameReview.innerHTML = review
     gameDiv.appendChild(gameReview)
-
+// create delete button
     const deleteBtn = document.createElement('BUTTON')
     deleteBtn.innerHTML = 'Delete'
     deleteBtn.className = 'delete'
     gameDiv.appendChild(deleteBtn)
-
+// create update button
     const updateGame = document.createElement('BUTTON')
     updateGame.innerHTML = 'Update'
     updateGame.className = 'update'
     gameDiv.appendChild(updateGame)
-
-    return gameDiv
   }
 
 
