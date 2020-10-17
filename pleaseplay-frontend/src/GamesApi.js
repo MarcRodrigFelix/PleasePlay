@@ -19,7 +19,7 @@ class GamesApi {
   }
 
   static updateGame(gameId, game){
-    return fetch(`hppt://localhost:3000/games/${gameId}`, {
+    return fetch(`http://localhost:3000/games/${gameId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

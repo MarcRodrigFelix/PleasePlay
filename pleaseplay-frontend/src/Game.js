@@ -81,19 +81,19 @@ class Game {
     new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
   }
 
-  static updateGame(game){
+  static updateGames(game){
     game.addEventListener("click", function(e){
-      e.preventDefault()
-      const gameId = e.target.parentNode.parentNode.dataset.id
+      // e.preventDefault()
 
       if (e.target.className === 'update'){
+        const gameId = e.target.parentNode.parentNode.dataset.id
         const upGame = {
           title: e.target.parentNode.title.value,
           image: e.target.parentNode.image.value,
           review: e.target.parentNode.review.value
         };
-        
         GamesApi.updateGame(gameId, upGame)
+        e.target.parentNode.reset()
       }
     })
   }

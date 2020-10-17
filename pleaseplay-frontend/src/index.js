@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
   Game.getGames()
   Game.deleteGames(game)
-  Game.updateGame(game)
+  Game.updateGames(game)
 
 })
