@@ -29,16 +29,21 @@ class GamesController < ApplicationController
   end
 
 
+  def destroy
+    Game.find(params[:id]).destroy
+  end
+
+
   def update
     game = Game.find_by(id: params[:id])
     game.update(title: params[:title], image: params[:image], review: params[:review])
 
-    render json: game
-  end
-
-
-  def destroy
-    Game.find(params[:id]).destroy
+    if game.save
+      render json: game
+    else
+      render json: game.errors
+    end
+    
   end
 
 end
