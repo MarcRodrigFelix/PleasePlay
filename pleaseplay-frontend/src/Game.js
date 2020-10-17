@@ -63,7 +63,7 @@ class Game {
 
     const upReview = document.createElement('input')
     upReview.setAttribute('type', 'text');
-    upReview.setAttribute('name', 'title');
+    upReview.setAttribute('name', 'review');
     upReview.setAttribute('placeholder', `Begin typing a new review...`);
     updateForm.appendChild(upReview)
 
@@ -84,15 +84,16 @@ class Game {
   static updateGame(game){
     game.addEventListener("click", function(e){
       e.preventDefault()
-      const gameId = e.target.parentNode.dataset.id
+      const gameId = e.target.parentNode.parentNode.dataset.id
+
       if (e.target.className === 'update'){
-        // GamesApi.updateGame(gameId, )
-        // const upGame = {
-        //   title: game.title.value,
-        //   image: game.image.value,
-        //   review: game.review.value
-        // };
-        console.log(e.target.parentNode)
+        const upGame = {
+          title: e.target.parentNode.title.value,
+          image: e.target.parentNode.image.value,
+          review: e.target.parentNode.review.value
+        };
+        
+        GamesApi.updateGame(gameId, upGame)
       }
     })
   }
