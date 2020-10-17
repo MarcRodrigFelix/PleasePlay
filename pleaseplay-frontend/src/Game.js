@@ -39,12 +39,13 @@ class Game {
     gameDiv.appendChild(deleteBtn)
 // create update button
     const updateGame = document.createElement('BUTTON')
-    updateGame.innerHTML = 'Update'
-    updateGame.className = 'update'
+    updateGame.innerHTML = 'Edit Game'
+    updateGame.className = 'edit-game'
     gameDiv.appendChild(updateGame)
 
+//  RENDER UPDATE FORM
     const updateForm = document.createElement('form')
-    updateForm.setAttribute('id', `game-id-${this.game.id}`)
+    updateForm.setAttribute('id', 'update-form')
     updateForm.className = 'update-form'
     gameDiv.appendChild(updateForm)
 
@@ -65,12 +66,35 @@ class Game {
     upReview.setAttribute('name', 'title');
     upReview.setAttribute('placeholder', `Begin typing a new review...`);
     updateForm.appendChild(upReview)
+
+    const upBtn = document.createElement('input')
+    upBtn.setAttribute('type', 'submit')
+    upBtn.setAttribute('value', 'Update')
+    upBtn.setAttribute('class', 'update')
+    updateForm.appendChild(upBtn)
+
   }
 
 
   static getGames(){
 // fetch API and put games through new Game class to display new game.
     new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
+  }
+
+  static updateGame(game){
+    game.addEventListener("click", function(e){
+      e.preventDefault()
+      const gameId = e.target.parentNode.dataset.id
+      if (e.target.className === 'update'){
+        // GamesApi.updateGame(gameId, )
+        // const upGame = {
+        //   title: game.title.value,
+        //   image: game.image.value,
+        //   review: game.review.value
+        // };
+        console.log(e.target.parentNode)
+      }
+    })
   }
 
 
