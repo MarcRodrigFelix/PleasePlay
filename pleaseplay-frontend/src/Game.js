@@ -2,7 +2,7 @@ class Game {
 
   constructor(game){
     this.game = game
-    this.card = this.renderGame()
+    this.renderGame()
   }
 
   // render(){
@@ -35,6 +35,11 @@ class Game {
     deleteBtn.innerHTML = 'Delete'
     deleteBtn.className = 'delete'
     gameDiv.appendChild(deleteBtn)
+
+    const updateGame = document.createElement('BUTTON')
+    updateGame.innerHTML = 'Update'
+    updateGame.className = 'update'
+    gameDiv.appendChild(updateGame)
 
     return gameDiv
   }
