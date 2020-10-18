@@ -11,6 +11,19 @@
     max-height: 400px;
 }
 
-.update-form{
+.update-form  {
   display: none;
+}
+
+.game-div {
+  border: 2px solid white;
+  background-color: #044b7d;
+  color: #A1ACB4;
+  padding: 30px;
+  margin: 45px;
+}
+
+#form {
+  padding: 50px;
+  margin: 50px;
 }
