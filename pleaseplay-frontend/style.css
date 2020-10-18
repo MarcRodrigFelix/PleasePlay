@@ -10,3 +10,7 @@
     max-width: 400px;
     max-height: 400px;
 }
+
+.update-form{
+  display: none;
+}

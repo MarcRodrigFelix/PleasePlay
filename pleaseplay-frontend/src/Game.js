@@ -8,7 +8,8 @@ class Game {
 
   render(){
     this.renderGame()
-    console.log(this.game)
+    this.toggleBtn()
+    // console.log(this.game)
   }
 
   renderGame(){
@@ -45,7 +46,7 @@ class Game {
 
 //  RENDER UPDATE FORM
     const updateForm = document.createElement('form')
-    updateForm.setAttribute('id', 'update-form')
+    updateForm.setAttribute('id', `update-form-${this.game.id}`)
     updateForm.className = 'update-form'
     gameDiv.appendChild(updateForm)
 
@@ -73,6 +74,22 @@ class Game {
     upBtn.setAttribute('class', 'update')
     updateForm.appendChild(upBtn)
 
+  }
+
+
+  toggleBtn(){
+    let gameDivs = document.getElementsByClassName('game-div')
+
+    Array.from(gameDivs).forEach(function(div){
+      div.addEventListener('click', function(e){
+        if (e.target.className === 'edit-game'){
+          const currentGameForm = e.target.parentNode.children[5]
+          if (currentGameForm.id == `update-form-${this.dataset.id}`){
+              currentGameForm.classList.toggle('update-form')
+          }
+        }
+      })
+    })
   }
 
 
