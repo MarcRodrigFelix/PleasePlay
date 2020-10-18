@@ -6,6 +6,10 @@
   text-align: center;
 }
 
+.games-div {
+  margin: 50px;
+}
+
 .game-img {
     max-width: 400px;
     max-height: 400px;
@@ -26,4 +30,15 @@
 #form {
   padding: 50px;
   margin: 50px;
+  background-color: #044b7d;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+
+#title, #image, #review {
+  margin: 7px;
+}
+
+#review {
+  padding: 25px;
 }
