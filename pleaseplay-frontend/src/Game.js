@@ -8,7 +8,7 @@ class Game {
 
   render(){
     this.renderGame()
-    this.toggleBtn()
+    this.toggleEditForm()
     // console.log(this.game)
   }
 
@@ -79,7 +79,7 @@ class Game {
   }
 
 
-  toggleBtn(){
+  toggleEditForm(){
     const game = document.querySelector('#games-div')
 
       game.addEventListener('click', function(e){
