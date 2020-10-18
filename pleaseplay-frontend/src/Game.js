@@ -78,18 +78,15 @@ class Game {
 
 
   toggleBtn(){
-    let gameDivs = document.getElementsByClassName('game-div')
+    const game = document.querySelector('#games-div')
 
-    Array.from(gameDivs).forEach(function(div){
-      div.addEventListener('click', function(e){
+      game.addEventListener('click', function(e){
+        e.preventDefault()
         if (e.target.className === 'edit-game'){
           const currentGameForm = e.target.parentNode.children[5]
-          if (currentGameForm.id == `update-form-${this.dataset.id}`){
-              currentGameForm.classList.toggle('update-form')
-          }
+          currentGameForm.classList.toggle('update-form')
         }
       })
-    })
   }
 
 
