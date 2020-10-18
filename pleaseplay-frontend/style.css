@@ -6,6 +6,13 @@
   text-align: center;
 }
 
+.main-body h1 {
+  border-bottom: 2px solid black;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 0 0 15px 0;
+}
+
 .games-div {
   margin: 50px;
 }
@@ -25,18 +32,21 @@
   color: #A1ACB4;
   padding: 30px;
   margin: 45px;
+  border-radius: 25px;
 }
 
-#form {
-  padding: 50px;
-  margin: 50px;
+#newgame-form {
+  padding: 25px;
+  margin: 100px 50px 100px 50px;
   background-color: #044b7d;
   border: 2px solid white;
   border-radius: 25px;
+  color: #A1ACB4;
 }
 
 #title, #image, #review {
   margin: 7px;
+  border-radius: 5px;
 }
 
 #review {
