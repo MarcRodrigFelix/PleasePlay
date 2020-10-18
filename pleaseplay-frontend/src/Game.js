@@ -59,12 +59,14 @@ class Game {
     const upImage = document.createElement('input')
     upImage.setAttribute('type', 'text');
     upImage.setAttribute('name', 'image');
+    upImage.setAttribute('value', `${image}`);
     upImage.setAttribute('placeholder', 'Paste new image url.');
     updateForm.appendChild(upImage)
 
     const upReview = document.createElement('input')
     upReview.setAttribute('type', 'text');
     upReview.setAttribute('name', 'review');
+    upReview.setAttribute('value', `${review}`);
     upReview.setAttribute('placeholder', `Begin typing a new review...`);
     updateForm.appendChild(upReview)
 
@@ -97,9 +99,10 @@ class Game {
 
   static updateGames(game){
     game.addEventListener("click", function(e){
-      // e.preventDefault()
-
+      e.preventDefault()
+      
       if (e.target.className === 'update'){
+        // console.log(e.target.parentNode.parentNode.childNodes[0].innerHTML)
         const gameId = e.target.parentNode.parentNode.dataset.id
         const upGame = {
           title: e.target.parentNode.title.value,
