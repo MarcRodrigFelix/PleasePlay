@@ -3,12 +3,10 @@ class Game {
   constructor(game){
     this.game = game
     this.render()
-    // this.renderUpdateForm(this.game)
   }
 
   render(){
     this.renderGame()
-    this.toggleEditForm()
     // console.log(this.game)
   }
 
@@ -79,10 +77,9 @@ class Game {
   }
 
 
-  toggleEditForm(){
-    const game = document.querySelector('#games-div')
+   static toggleBtn(gameDiv){
 
-      game.addEventListener('click', function(e){
+      gameDiv.addEventListener('click', function(e){
         e.preventDefault()
         if (e.target.className === 'edit-game'){
           const currentGameForm = e.target.parentNode.children[5]
@@ -99,7 +96,7 @@ class Game {
 
   static updateGames(game){
     game.addEventListener("click", function(e){
-      e.preventDefault()
+      // e.preventDefault()
       
       if (e.target.className === 'update'){
         // console.log(e.target.parentNode.parentNode.childNodes[0].innerHTML)
