@@ -1,13 +1,13 @@
 .main-body {
   width: 800px;
   margin: 0 auto;
-  background-color: #A1ACB4;
-  color:  #3E5161;
+  background-color: #76858f;
+  color: #7cfcfc;
   text-align: center;
 }
 
 .main-body h1 {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #3e5161;
   margin-top: 80px;
   margin-bottom: 80px;
   padding: 0 0 15px 0;
@@ -18,8 +18,8 @@
 }
 
 .game-img {
-    max-width: 400px;
-    max-height: 400px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .update-form {
@@ -27,21 +27,40 @@
 }
 
 .game-div {
-  border: 2px solid white;
-  background-color: #044b7d;
-  color: #A1ACB4;
+  /* border: 2px solid white; */
+  background-color:  #3e5161;
+  color: #7cfcfc;
   padding: 30px;
   margin: 45px;
   border-radius: 25px;
 }
 
+.delete {
+  margin: 15px;
+}
+
+#update-form {
+  margin: 15px;
+  padding: 15px;
+}
+
+#update-form input[type='text']{
+  margin: 5px;
+}
+
+#update-form input[name='review']{
+  margin-right: 50px;
+  /* margin-top: 15px;
+  padding: 10px; */
+}
+
 #newgame-form {
   padding: 25px;
   margin: 100px 50px 100px 50px;
-  background-color: #044b7d;
-  border: 2px solid white;
+  background-color: #3e5161;
+  /* border: 2px solid white; */
   border-radius: 25px;
-  color: #A1ACB4;
+  color: #7cfcfc;
 }
 
 #title, #image, #review {

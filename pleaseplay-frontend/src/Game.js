@@ -44,7 +44,7 @@ class Game {
 
 //  RENDER UPDATE FORM
     const updateForm = document.createElement('form')
-    updateForm.setAttribute('id', `update-form-${this.game.id}`)
+    updateForm.setAttribute('id', `update-form`)
     updateForm.className = 'update-form'
     gameDiv.appendChild(updateForm)
 
