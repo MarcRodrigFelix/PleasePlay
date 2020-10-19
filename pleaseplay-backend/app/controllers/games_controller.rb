@@ -29,11 +29,6 @@ class GamesController < ApplicationController
   end
 
 
-  def destroy
-    Game.find(params[:id]).destroy
-  end
-
-
   def update
     game = Game.find_by(id: params[:id])
     game.update(
@@ -47,7 +42,12 @@ class GamesController < ApplicationController
     else
       render json: game.errors
     end
-    
   end
+
+
+  def destroy
+    Game.find(params[:id]).destroy
+  end
+
 
 end
