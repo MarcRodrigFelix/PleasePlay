@@ -14,4 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
   Game.deleteGames(game)
   Game.updateGames(game)
   Game.toggleBtn(game)
+
+  CommentsApi.getComments()
 })
