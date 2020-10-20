@@ -109,13 +109,8 @@ class Game {
 
 
 
-   toggleEditBtn = (event) => {
-        // e.preventDefault()
-        // if (e.target.className === 'edit-game'){
-          const currentGameForm = event.target.parentNode.children[5]
-          currentGameForm.classList.toggle('update-form')
-        // }
-     
+   toggleEditBtn = () => {
+     this.gameDiv.children[5].classList.toggle('update-form')
   }
 
 
