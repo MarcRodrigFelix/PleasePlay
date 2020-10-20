@@ -74,10 +74,27 @@ class Game {
     upBtn.setAttribute('class', 'update')
     updateForm.appendChild(upBtn)
 
+// CREATE MODAL
+    const modalBtn = document.createElement('button')
+    modalBtn.id = 'modalBtn'
+    modalBtn.innerHTML = 'Open Comments'
+    gameDiv.appendChild(modalBtn)
+
+// create modal div
+    const modalDiv = document.createElement('div')
+    modalDiv.id = 'myModal'
+    modalDiv.className = 'modal'
+    gameDiv.appendChild(modalDiv)
+
+// create modal content
+    const modalContent = document.createElement('div')
+    modalContent.className = 'modal-content'
+    modalDiv.appendChild(modalContent)
+
   }
 
 
-   static toggleBtn(gameDiv){
+   static toggleEditBtn(gameDiv){
 
       gameDiv.addEventListener('click', function(e){
         e.preventDefault()
@@ -93,6 +110,7 @@ class Game {
 // fetch API and put games through new Game class to display new game.
     new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
   }
+
 
   static updateGames(game){
     game.addEventListener("click", function(e){
