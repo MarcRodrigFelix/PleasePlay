@@ -91,7 +91,18 @@ class Game {
     modalContent.className = 'modal-content'
     modalDiv.appendChild(modalContent)
 
+    const modalSpan = document.createElement('span')
+    modalSpan.className = 'close'
+    modalSpan.id = 'close'
+    modalSpan.innerHTML = '&times;'
+    modalDiv.appendChild(modalSpan)
+
+    const modalPTag = document.createElement('P')
+    modalPTag.innerHTML = 'Some practice Comments here'
+    modalDiv.appendChild(modalPTag)
+
   }
+
 
 
    static toggleEditBtn(gameDiv){
