@@ -2,15 +2,16 @@ class Game {
 
   constructor(game){
     this.game = game
-    this.render()
+    this.renderGame()
+    this.setEventListeners()
   }
 
-  render(){
-    this.renderGame()
-    // console.log(this.game)
+  setEventListeners(){
+    this.gameDiv.querySelector('.edit-game').addEventListener('click', this.toggleEditBtn)
   }
 
   renderGame(){
+
     const { title, image, review } = this.game
     const div = document.getElementById('games-div')
 
@@ -101,19 +102,20 @@ class Game {
     modalPTag.innerHTML = 'Some practice Comments here'
     modalDiv.appendChild(modalPTag)
 
+    this.gameDiv = gameDiv
+
+    console.log(this.gameDiv)
   }
 
 
 
-   static toggleEditBtn(gameDiv){
-
-      gameDiv.addEventListener('click', function(e){
-        e.preventDefault()
-        if (e.target.className === 'edit-game'){
-          const currentGameForm = e.target.parentNode.children[5]
+   toggleEditBtn = (event) => {
+        // e.preventDefault()
+        // if (e.target.className === 'edit-game'){
+          const currentGameForm = event.target.parentNode.children[5]
           currentGameForm.classList.toggle('update-form')
-        }
-      })
+        // }
+     
   }
 
 

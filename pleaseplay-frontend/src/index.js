@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
   Game.getGames()
   Game.deleteGames(game)
   Game.updateGames(game)
-  Game.toggleEditBtn(game)
+  // Game.toggleEditBtn(game)
   
   Comments.renderComments()
   Comments.openModal(game)
