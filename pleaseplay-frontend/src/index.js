@@ -7,7 +7,7 @@ const gameForm = document.getElementsByClassName('update-form')
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  
+
   GameForm.createGame(newForm)
   
   Game.getGames()
@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function(){
   Game.updateGames(game)
   Game.toggleBtn(game)
 
-  CommentsApi.getComments()
+  Comments.renderComments()
 })
