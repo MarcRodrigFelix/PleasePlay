@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function(e){
   Game.updateGames(game)
   
   Comments.renderComments()
+  
   CommentEvents.openModal(game)
 
   // console.log(modalSpan)
