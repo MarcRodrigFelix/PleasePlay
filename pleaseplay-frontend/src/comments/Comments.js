@@ -4,8 +4,6 @@ class Comments{
   }
 
 
-
-
   static openModal(modal){
     modal.addEventListener('click', function(e){
       const commentModal = document.getElementById("myModal")

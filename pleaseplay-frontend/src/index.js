@@ -5,14 +5,14 @@ const gameForm = document.getElementsByClassName('update-form')
 
 
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function(e){
+  e.preventDefault()
 
   GameForm.createGame(newForm)
   
   Game.getGames()
   Game.deleteGames(game)
   Game.updateGames(game)
-  // Game.toggleEditBtn(game)
   
   Comments.renderComments()
   Comments.openModal(game)

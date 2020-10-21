@@ -6,8 +6,8 @@ class Game {
     this.setEventListeners()
   }
 
-  setEventListeners(){
-    this.gameDiv.querySelector('.edit-game').addEventListener('click', this.toggleEditBtn)
+  static getGames(){
+    new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
   }
 
   renderGame(){
@@ -108,24 +108,20 @@ class Game {
   }
 
 
+  setEventListeners(){
+    this.gameDiv.querySelector('.edit-game').addEventListener('click', this.toggleEditBtn)
+  }
+
 
    toggleEditBtn = () => {
      this.gameDiv.children[5].classList.toggle('update-form')
   }
 
 
-  static getGames(){
-// fetch API and put games through new Game class to display new game.
-    new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
-  }
-
-
   static updateGames(game){
     game.addEventListener("click", function(e){
-      // e.preventDefault()
       
       if (e.target.className === 'update'){
-        // console.log(e.target.parentNode.parentNode.childNodes[0].innerHTML)
         const gameId = e.target.parentNode.parentNode.dataset.id
         const upGame = {
           title: e.target.parentNode.title.value,
