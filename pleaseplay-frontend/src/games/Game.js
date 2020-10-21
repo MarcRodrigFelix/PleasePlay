@@ -4,6 +4,7 @@ class Game {
     this.game = game
     this.renderGame()
     this.setEventListeners()
+    Comments.renderModal(this.gameDiv)
   }
 
   static getGames(){
@@ -12,19 +13,17 @@ class Game {
 
 
   renderGame(){
+    const { title, image, review } = this.game
+    // let gameId = '';
+    // let content = '';
+    // let commentator = '';
 
-    const { title, image, review, comments } = this.game
-    let gameId = '';
-    let content = '';
-    let commentator = '';
+    // for (const [key, value] of Object.entries(comments)){
+    //   gameId = value['game_id']
+    //   content = value['content']
+    //   commentator = value['commentator']
+    // }
 
-    for (const [key, value] of Object.entries(comments)){
-      gameId = value['game_id']
-      content = value['content']
-      commentator = value['commentator']
-    }
-
-    // console.log(`${gameId}. Comment:${content}. UserName:${commentator}`)
 
     const div = document.getElementById('games-div')
 
@@ -93,32 +92,36 @@ class Game {
     upBtn.setAttribute('class', 'update')
     updateForm.appendChild(upBtn)
 
-// CREATE MODAL
-    const modalBtn = document.createElement('button')
-    modalBtn.id = 'modalBtn'
-    modalBtn.innerHTML = 'Open Comments'
-    gameDiv.appendChild(modalBtn)
+// // CREATE MODAL
+//     const modalBtn = document.createElement('button')
+//     modalBtn.id = 'modalBtn'
+//     modalBtn.innerHTML = 'Open Comments'
+//     gameDiv.appendChild(modalBtn)
 
-// create modal div
-    const modalDiv = document.createElement('div')
-    modalDiv.id = 'myModal'
-    modalDiv.className = 'modal'
-    gameDiv.appendChild(modalDiv)
+// // create modal div
+//     const modalDiv = document.createElement('div')
+//     modalDiv.id = 'myModal'
+//     modalDiv.className = 'modal'
+//     gameDiv.appendChild(modalDiv)
 
-// create modal content
-    const modalContent = document.createElement('div')
-    modalContent.className = 'modal-content'
-    modalDiv.appendChild(modalContent)
+// // create modal content
+//     const modalContent = document.createElement('div')
+//     modalContent.className = 'modal-content'
+//     modalDiv.appendChild(modalContent)
 
-    const modalSpan = document.createElement('span')
-    modalSpan.className = 'close'
-    modalSpan.id = 'close'
-    modalSpan.innerHTML = '&times;'
-    modalDiv.appendChild(modalSpan)
+//     const modalHeader = document.createElement('h3')
+//     modalHeader.innerHTML = `Comments for This Game`
+//     modalContent.appendChild(modalHeader)
 
-    const modalPTag = document.createElement('P')
-    modalPTag.innerHTML = 'Some practice Comments here'
-    modalDiv.appendChild(modalPTag)
+//     const modalSpan = document.createElement('span')
+//     modalSpan.className = 'close'
+//     modalSpan.id = 'close'
+//     modalSpan.innerHTML = '&times;'
+//     modalContent.appendChild(modalSpan)
+
+    // const modalPTag = document.createElement('P')
+    // modalPTag.innerHTML = `Comments for ${title}`
+    // modalDiv.appendChild(modalPTag)
 
     this.gameDiv = gameDiv
   }

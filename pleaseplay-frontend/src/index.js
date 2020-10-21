@@ -5,8 +5,7 @@ const gameForm = document.getElementsByClassName('update-form')
 
 
 
-document.addEventListener('DOMContentLoaded', function(e){
-  e.preventDefault()
+document.addEventListener('DOMContentLoaded', function(){
 
   GameForm.createGame(newForm)
   
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(e){
   Game.updateGames(game)
   
   Comments.renderComments()
-  
+
   CommentEvents.openModal(game)
 
   // console.log(modalSpan)
