@@ -10,9 +10,22 @@ class Game {
     new GamesApi().fetchGames().then(games => games.forEach(game => new Game(game)))
   }
 
+
   renderGame(){
 
-    const { title, image, review } = this.game
+    const { title, image, review, comments } = this.game
+    let gameId = '';
+    let content = '';
+    let commentator = '';
+
+    for (const [key, value] of Object.entries(comments)){
+      gameId = value['game_id']
+      content = value['content']
+      commentator = value['commentator']
+    }
+
+    // console.log(`${gameId}. Comment:${content}. UserName:${commentator}`)
+
     const div = document.getElementById('games-div')
 
     const gameDiv = document.createElement('DIV')
@@ -20,24 +33,29 @@ class Game {
     div.appendChild(gameDiv)
     gameDiv.className = 'game-div'
 // create div for game
+
     const gameTitle = document.createElement('H3')
     gameTitle.innerHTML = `| ${title} |`
     gameDiv.appendChild(gameTitle)
 // create title for game 
+
     const gameImage = document.createElement('IMG')
     gameImage.className = 'game-img'
     gameImage.src = image
     gameDiv.appendChild(gameImage)
 // create paragraph for game
+
     const gameReview = document.createElement('P')
     gameReview.innerHTML = review
     gameDiv.appendChild(gameReview)
 // create delete button
+
     const deleteBtn = document.createElement('BUTTON')
     deleteBtn.innerHTML = 'Delete'
     deleteBtn.className = 'delete'
     gameDiv.appendChild(deleteBtn)
 // create update button
+
     const updateGame = document.createElement('BUTTON')
     updateGame.innerHTML = 'Edit Game'
     updateGame.className = 'edit-game'
@@ -103,8 +121,6 @@ class Game {
     modalDiv.appendChild(modalPTag)
 
     this.gameDiv = gameDiv
-
-    console.log(this.gameDiv)
   }
 
 

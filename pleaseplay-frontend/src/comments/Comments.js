@@ -9,15 +9,19 @@ class Comments{
     .then(comments => {
       comments.forEach(comment => {
         new Comments(comment)
-        console.log(comment)
+        // console.log(comment)
       })
     })
   }
 
 
   renderAllComments(){
-    const { content, commentator } = this.comment
-    console.log(content + ' ' + commentator)
+    const { content, commentator, game_id } = this.comment
+    if (game_id === 1){
+      // console.log(content)
+    }
+    // const box = document.getElementsByClassName('game-div')
+    // console.log(box)
   }
 
 
