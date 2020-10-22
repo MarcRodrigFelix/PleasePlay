@@ -5,8 +5,8 @@ const gameForm = document.getElementsByClassName('update-form')
 
 
 
-document.addEventListener('DOMContentLoaded', function(){
 
+document.addEventListener('DOMContentLoaded', function(){
   GameForm.createGame(newForm)
   
   Game.getGames()
