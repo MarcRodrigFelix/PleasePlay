@@ -1,5 +1,7 @@
 class Game {
 
+  static allGames = []
+
   constructor(game){
     this.game = game
     this.renderGame()
@@ -7,6 +9,7 @@ class Game {
     this.game.comments.forEach(comment => {
       new Comments(comment)
     })
+    Game.allGames.push(this.game)
   }
 
   static getGames(){
