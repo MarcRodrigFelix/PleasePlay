@@ -18,8 +18,9 @@ class Game {
 
 
   renderGame(){
-    const { title, image, review } = this.game
-
+    console.log(`Game.allGames`,Game.allGames)
+    const { title, image, review, comments } = this.game
+    
     // const { id, content, commentator } = this.game.comments
     // console.log(this.game)
     // console.log(this.game.comments[0]['content'])
@@ -29,7 +30,7 @@ class Game {
 
     const gameDiv = document.createElement('DIV')
     gameDiv.dataset.id = this.game.id
-    div.appendChild(gameDiv)
+    // div.appendChild(gameDiv)
     gameDiv.className = 'game-div'
 // create div for game
 
@@ -128,6 +129,7 @@ class Game {
 //     modalContent.appendChild(modalSpan)
 
     this.gameDiv = gameDiv
+    game.appendChild(this.gameDiv)
   }
 
 
