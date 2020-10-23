@@ -1,10 +1,13 @@
 class Comments{
 
+  static allComments = [] 
+
   constructor(comment){
     this.comment = comment
     // this.comment.game = game
     // Comments.renderModal(this.comment)
     this.renderComments()
+    Comments.allComments.push(this.comment)
   }
 
   // static renderComments(){
@@ -18,7 +21,7 @@ class Comments{
   // }
 
   renderComments = () => {
-    const { id, content, commentator, game_id} = this.comment
+    const { id, content, commentator, game_id } = this.comment
     // console.log(this.comment.game_id)
     // if (this.comment.game_id === ){
     //   console.log(content)
