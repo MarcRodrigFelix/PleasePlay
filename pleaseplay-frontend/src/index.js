@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
   Game.deleteGames(game)
   Game.updateGames(game)
   
-  Comments.renderComments()
+  // Comments.renderComments()
 
   CommentEvents.openModal(game)
 
