@@ -115,3 +115,7 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+#modalBtn {
+  margin: 0 0 0 15px;
+}

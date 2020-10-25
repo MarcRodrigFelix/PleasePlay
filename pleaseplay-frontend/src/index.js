@@ -1,6 +1,6 @@
 
 const newForm = document.getElementById("form")
-const game = document.querySelector('.games-collections')
+const game = document.querySelector('#games-collection')
 const gameForm = document.getElementsByClassName('update-form')
 
 

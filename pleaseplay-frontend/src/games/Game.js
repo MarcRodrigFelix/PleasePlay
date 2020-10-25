@@ -6,9 +6,9 @@ class Game {
     this.game = game
     this.renderGame()
     this.setEventListeners()
-    this.game.comments.forEach(comment => {
-      new Comments(comment)
-    })
+    // this.game.comments.forEach(comment => {
+    //   new Comments(comment)
+    // })
     Game.allGames.push(this.game)
   }
 
@@ -18,19 +18,15 @@ class Game {
 
 
   renderGame(){
-    console.log(`Game.allGames`,Game.allGames)
-    const { title, image, review, comments } = this.game
-    
-    // const { id, content, commentator } = this.game.comments
-    // console.log(this.game)
-    // console.log(this.game.comments[0]['content'])
-    // const { id, content, commentator } = Object.values(this.game.comments)
+    // console.log(`Game.allGames`,Game.allGames)
+    const { title, image, review } = this.game
 
-    const div = document.getElementById('games-div')
+
+    const div = document.querySelector('#games-collection')
 
     const gameDiv = document.createElement('DIV')
     gameDiv.dataset.id = this.game.id
-    // div.appendChild(gameDiv)
+    div.appendChild(gameDiv)
     gameDiv.className = 'game-div'
 // create div for game
 
@@ -93,6 +89,15 @@ class Game {
     upBtn.setAttribute('class', 'update')
     updateForm.appendChild(upBtn)
 
+    // const gameComs = document.createElement('DIV')
+    // gameComs.className = `${title}`
+    // gameDiv.appendChild(gameComs)
+
+    // const gameP = document.createElement('P')
+    // gameP.innerText = `${commentContent}`
+    // console.log()
+    // gameDiv.appendChild(gameP)
+
 // // CREATE MODAL
 //     const modalBtn = document.createElement('button')
 //     modalBtn.id = 'modalBtn'
@@ -129,7 +134,8 @@ class Game {
 //     modalContent.appendChild(modalSpan)
 
     this.gameDiv = gameDiv
-    game.appendChild(this.gameDiv)
+
+    Comments.renderComments(this.gameDiv, this.game.comments[0], this.game)
   }
 
 
